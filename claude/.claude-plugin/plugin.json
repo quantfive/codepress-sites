@@ -9,6 +9,8 @@
     "url": "https://codepress.dev"
   },
   "homepage": "https://codepress.dev",
+  "icon": "./.claude-plugin/icon.png",
+  "privacyPolicyUrl": "https://codepress.dev/privacy",
   "license": "MIT",
   "keywords": [
     "websites",

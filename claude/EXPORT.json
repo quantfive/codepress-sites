@@ -4,14 +4,19 @@
   "version": "0.2.2",
   "source_revision": "46edfcbaca1c120c9b5cc9ee45ec0241d3b8adae",
   "canonical_source_inputs_sha256": "77859c780ac78a8a9985d6e234e5e38e65ca830dedcb0c4b45c3c0ae943b1a5a",
-  "note": "Public runtime subset of the validated canonical ZIP; private submission state and review notes excluded. README adapted for standalone public setup. No backend or private history.",
+  "note": "Public source export with directory-only Claude manifest icon/privacy metadata and the existing unmodified 512px brand PNG. README and inventory adapted for standalone setup. Canonical revision and input hash are provenance, not identity with the delivered full ZIP; those archives are unchanged. No backend, private history or review-state records.",
   "license": "MIT; exported materials only; no trademark rights",
   "inventory_note": "All payload files except this EXPORT.json are enumerated.",
   "files": [
     {
+      "path": ".claude-plugin/icon.png",
+      "bytes": 13081,
+      "sha256": "9cebfc1f18b4eaeb4452a3b7bc5fdbb4c437e0d59b066c22376a37d383eacafb"
+    },
+    {
       "path": ".claude-plugin/plugin.json",
-      "bytes": 469,
-      "sha256": "0c32fc1421849c7d6b263b108c4aca01c0cccdbce0466760415e6edaa0b075c8"
+      "bytes": 563,
+      "sha256": "8348d4677ebda6b6765e3c7e7c06dda1f2f563a944719072a5b18798664242c7"
     },
     {
       "path": ".mcp.json",
@@ -30,8 +35,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 6527,
-      "sha256": "ed62e30f20dcb605676db071059974af0059a900ab4709125cd9c759f4a858df"
+      "bytes": 7250,
+      "sha256": "37c4809f3214b830319416b49ab7e002f584760f72903cb04f8dc655279b20df"
     },
     {
       "path": "assets/logo-mark-square.png",

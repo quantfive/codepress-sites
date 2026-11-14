@@ -3,7 +3,7 @@
   "version": "0.2.2",
   "source_revision": "46edfcbaca1c120c9b5cc9ee45ec0241d3b8adae",
   "license": "MIT; exported materials only; no trademark rights",
-  "note": "No backend, repository history, private review-state records or reviewer credentials. Initial standalone distribution snapshot.",
+  "note": "Public source snapshot with directory-only Claude manifest icon/privacy metadata and the existing unmodified 512px brand PNG; documentation and inventories adapted accordingly. Canonical source_revision remains provenance, not identity with delivered full ZIPs; those archives and the OpenAI payload are unchanged. No backend, private history, review-state records or credentials.",
   "files": [
     {
       "path": "LICENSE",
@@ -12,13 +12,18 @@
     },
     {
       "path": "README.md",
-      "bytes": 6512,
-      "sha256": "fee6f3cfae5846501a9f83fb449e767427662bd02a988ed979bc6c531dd7e65f"
+      "bytes": 7256,
+      "sha256": "4eb46c43184392c6b73b41ebccec775fb99ae9f70cfbd59c225218d70311ad31"
+    },
+    {
+      "path": "claude/.claude-plugin/icon.png",
+      "bytes": 13081,
+      "sha256": "9cebfc1f18b4eaeb4452a3b7bc5fdbb4c437e0d59b066c22376a37d383eacafb"
     },
     {
       "path": "claude/.claude-plugin/plugin.json",
-      "bytes": 469,
-      "sha256": "0c32fc1421849c7d6b263b108c4aca01c0cccdbce0466760415e6edaa0b075c8"
+      "bytes": 563,
+      "sha256": "8348d4677ebda6b6765e3c7e7c06dda1f2f563a944719072a5b18798664242c7"
     },
     {
       "path": "claude/.mcp.json",
@@ -32,8 +37,8 @@
     },
     {
       "path": "claude/EXPORT.json",
-      "bytes": 1851,
-      "sha256": "99a8a3418f5c407d04f9d0ff40d9fe80dfdb49ddbbdd6bfd40e8261a70487653"
+      "bytes": 2179,
+      "sha256": "6f9be372946684c4ce2530134ad01f868d02b2e674e5db1a538a7a07df8538fb"
     },
     {
       "path": "claude/LICENSE",
@@ -42,8 +47,8 @@
     },
     {
       "path": "claude/README.md",
-      "bytes": 6527,
-      "sha256": "ed62e30f20dcb605676db071059974af0059a900ab4709125cd9c759f4a858df"
+      "bytes": 7250,
+      "sha256": "37c4809f3214b830319416b49ab7e002f584760f72903cb04f8dc655279b20df"
     },
     {
       "path": "claude/assets/logo-mark-square.png",
@@ -105,5 +110,6 @@
       "bytes": 13813,
       "sha256": "f45d99bb0975e387caebefc867a0e3c5434653158bcfefb8afd8f3d87659a463"
     }
-  ]
+  ],
+  "inventory_note": "All public payload files, including child EXPORT.json inventories, except this root EXPORT.json are enumerated; Git metadata is excluded."
 }

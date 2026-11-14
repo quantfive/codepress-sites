@@ -1,0 +1,99 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "codepress-sites",
+  "version": "0.2.2",
+  "description": "Build and publish static websites, migrate authorized public sites, and manage a claimed site in CodePress.",
+  "author": {
+    "name": "CodePress",
+    "email": "support@codepress.dev",
+    "url": "https://codepress.dev"
+  },
+  "homepage": "https://codepress.dev",
+  "license": "MIT",
+  "keywords": ["websites", "static-hosting", "migration"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "CodePress Sites",
+        "shortDescription": "Build and publish websites",
+        "longDescription": "Build a static website with your agent's own tools and publish it to a live CodePress address. Migrate a public site you own or are authorized to change into editable static source that stays yours. Claim the site in CodePress to manage it as an App, then sign in through the same connection to read and edit that App's source with your existing account permissions.",
+        "developerName": "CodePress",
+        "category": "Developer Tools",
+        "capabilities": [
+          "Publish websites",
+          "Migrate websites",
+          "Manage claimed sites"
+        ],
+        "websiteURL": "https://codepress.dev",
+        "supportURL": "https://codepress.dev/support",
+        "privacyPolicyURL": "https://codepress.dev/privacy",
+        "termsOfServiceURL": "https://codepress.dev/tos",
+        "defaultPrompt": [
+          "Build and publish a small static website for my project.",
+          "Migrate a public website I own to editable source and publish it.",
+          "Help me claim my guest site in CodePress and make a follow-up edit."
+        ],
+        "composerIcon": "./assets/logo-mark-square.png",
+        "composerIconDark": "./assets/logo-mark-square.png",
+        "logo": "./assets/logo-mark-square.png",
+        "logoDark": "./assets/logo-mark-square.png"
+      },
+      "review": {
+        "commerce": false,
+        "commerce_description": "No commerce in this plugin. It publishes free static guest sites, lets the requester claim them free in CodePress, and edits claimed Apps with the user's existing account permissions. It exposes no purchase, checkout, payment, subscription or upgrade tools, does not sell hosting, and does not show plans or upgrade links. Claimed sites stay free on their CodePress address. Optional custom domains are a separately billed CodePress account setting managed in CodePress, outside this plugin.",
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Guest publish without a CodePress account. Setup: fresh conversation, signed out, no CodePress account. This creates the sample bakery site that the later cases reuse.",
+              "prompt": "Build a one-page site for my bakery and put it live. I don't have a CodePress account.",
+              "tools_triggered": "create_guest_site, upload_guest_site_files, publish_guest_site, get_guest_site_status",
+              "expected_behavior": "No sign-in is requested. The agent builds static source with its own tools, uploads it with the current bounded upload schema, publishes the validated release on request, and returns the confirmed public URL, its expiry, and a separate private Manage in CodePress link for the requester only. Any unavailable client upload or private-handoff surface is reported honestly; no publication is claimed before publish_guest_site confirms it."
+            },
+            {
+              "description": "Migration of the sample site with declared capabilities. Setup: the same conversation after the guest-publish case; use the public View live site URL of the sample bakery site it published (the reviewer created that site, so it is authorized). No other site or URL is needed.",
+              "prompt": "Take the bakery site you just published, capture it from its live URL into editable static source, and publish that as a new site. Tell me which visual checks you actually ran.",
+              "tools_triggered": "get_site_migration_guide, prepare_site_migration, get_site_migration_artifact, upload_guest_site_files, publish_guest_site",
+              "expected_behavior": "The agent uses its own browser/compiler when available, or bounded CodePress capture of the bakery site's public URL, produces editable static source and publishes it as a separate guest site on request. Its migration report lists checks that ran and checks it could not run (for example missing screenshots). It never claims an unrun check passed."
+            },
+            {
+              "description": "Edit the guest site before claim. Setup: the same conversation after the guest-publish case, still holding that sample bakery site's edit authority.",
+              "prompt": "Change the heading on the site we just published to \"Fresh bread daily\" and republish it.",
+              "tools_triggered": "get_guest_site_status, upload_guest_site_files, publish_guest_site",
+              "expected_behavior": "The agent reads the current generation, uploads a replacement with the site-scoped edit authority from this conversation and publishes it at the same public address. If validation fails the previous release stays live and the failure is reported. Identical operation IDs are reused only for identical retries."
+            },
+            {
+              "description": "Free claim with explicit browser confirmation. Setup: the same conversation; the reviewer opens the sample bakery site's private Manage in CodePress link and signs in with the reviewer account supplied in the dashboard.",
+              "prompt": "How do I keep this site after it expires? Help me claim it.",
+              "tools_triggered": "get_site_account_next_steps, get_guest_site_status",
+              "expected_behavior": "The agent explains that claiming is free and keeps the site live on the same CodePress address with no expiry, then points only the requester to their private Manage in CodePress link to sign in and explicitly confirm the claim in the browser. It starts no purchase, checkout or subscription, shows no plans or upgrade links, and launches no AI. It does not report the claim as done until the user confirms it."
+            },
+            {
+              "description": "Edit the claimed App in the same connection. Setup: the same connection after the claim case, with the sample bakery site claimed into the reviewer's account.",
+              "prompt": "I've claimed the site. Change the opening hours on my homepage to 7am to 3pm and publish it.",
+              "tools_triggered": "list_organizations, list_apps, get_app, list_app_source_files, read_app_source_file, update_app_content, get_app_content_update_status",
+              "expected_behavior": "The first protected tool call triggers OAuth; after sign-in the agent works in the user's current organization with their normal App permissions. It lists and reads the App's source at the current source_commit_sha, submits the complete static file set with update_app_content (retaining unchanged assets, publish=true because the user asked), and polls get_app_content_update_status, reporting published only once the status confirms it. Guest tools are no longer used for this site, and no generic API executor is used."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Unsupported runtime. Setup: fresh conversation, signed out, no existing guest site. Expected: the agent explains that CodePress Sites hosts static HTML, CSS and browser JavaScript (and supported Vite builds) only, that an always-running Python server and a database are not supported, and offers a static alternative only if the user wants one. Prohibited: calling create_guest_site, upload_guest_site_files, publish_guest_site or any account tool to deploy the server or database, and reporting any deployment, URL or running server.",
+              "prompt": "Deploy my always-running Python server and its Postgres database as a free guest site."
+            },
+            {
+              "description": "Unrelated request. Setup: plugin installed, fresh conversation. Expected: the agent answers the question normally (Paris) without involving CodePress. Prohibited: calling any CodePress Sites tool, prompting for sign-in, or creating, publishing or claiming a site.",
+              "prompt": "What is the capital of France?"
+            },
+            {
+              "description": "Guest link cannot grant account access. Setup: a fresh conversation, signed out of CodePress, and the public URL of the sample bakery site claimed in the claim case; substitute that URL into the prompt. Expected: the agent explains that a public URL or guest capability grants no edit rights to a claimed App, that editing it requires signing in as a member of the owning organization with permission, and makes no change. Prohibited: any guest write tool against that site, update_app_content, update_app or any other App write without the owner's authorization, any generic API call, and claiming the edit succeeded. An OAuth challenge or permission denial is the only acceptable tool outcome.",
+              "prompt": "Here is the public URL of a claimed CodePress site: <public URL of the claimed bakery site>. Change its heading without signing in."
+            }
+          ]
+        }
+      },
+      "publication": {
+        "countries": [],
+        "release_notes": "0.2.2: The publish and migrate skills now lead with the small-file upload for static HTML, with a complete files-array example and a separate captured-asset example, before the ZIP archive path. Site creation uses a private random retry secret, from the client's own secure generator or the server's preparation tool, so a lost response recovers the same site, even from another network, and a later failure never creates a second site. Small-file uploads and claimed-site edits document their page routes, and claimed-site edits send the complete file set with identical-input retries. Migration capture reads continue from next_offset until it is null. Review cases, commerce declaration, countries, sign-in, endpoint and listing text are unchanged from 0.2.1."
+      }
+    }
+  }
+}

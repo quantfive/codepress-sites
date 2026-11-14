@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "codepress-sites": {
+      "type": "http",
+      "url": "https://api.codepress.dev/mcp/sites"
+    }
+  }
+}

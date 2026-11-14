@@ -1,0 +1,52 @@
+{
+  "generator": "codepress-sites-public-source/v1",
+  "format": "claude",
+  "version": "0.2.2",
+  "source_revision": "46edfcbaca1c120c9b5cc9ee45ec0241d3b8adae",
+  "canonical_source_inputs_sha256": "77859c780ac78a8a9985d6e234e5e38e65ca830dedcb0c4b45c3c0ae943b1a5a",
+  "note": "Public runtime subset of the validated canonical ZIP; private submission state and review notes excluded. README adapted for standalone public setup. No backend or private history.",
+  "license": "MIT; exported materials only; no trademark rights",
+  "inventory_note": "All payload files except this EXPORT.json are enumerated.",
+  "files": [
+    {
+      "path": ".claude-plugin/plugin.json",
+      "bytes": 469,
+      "sha256": "0c32fc1421849c7d6b263b108c4aca01c0cccdbce0466760415e6edaa0b075c8"
+    },
+    {
+      "path": ".mcp.json",
+      "bytes": 130,
+      "sha256": "e48fd27822abe8c8c0b0f904df9c1a7a9342505bcc44365d0247fdc88097d804"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 5796,
+      "sha256": "430a7ea23663a858da282689f217daf5bdb91fbddc0c3f95cab4e31834a8a493"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1460,
+      "sha256": "c08fefe32fe2718592ebb89b401fdfd3fc42fdc52eefad32fd28d78808cda196"
+    },
+    {
+      "path": "README.md",
+      "bytes": 6527,
+      "sha256": "ed62e30f20dcb605676db071059974af0059a900ab4709125cd9c759f4a858df"
+    },
+    {
+      "path": "assets/logo-mark-square.png",
+      "bytes": 5596,
+      "sha256": "6a028cbd7c3bf29246d6b0813feff9e697ae11d3ff200759066075a28e4bacfe"
+    },
+    {
+      "path": "skills/migrate-site/SKILL.md",
+      "bytes": 14962,
+      "sha256": "65e51e00a938e5a199a44308cb3bccb53c68fd824eb1843445a0263ed0b464b5"
+    },
+    {
+      "path": "skills/publish-site/SKILL.md",
+      "bytes": 13813,
+      "sha256": "f45d99bb0975e387caebefc867a0e3c5434653158bcfefb8afd8f3d87659a463"
+    }
+  ]
+}

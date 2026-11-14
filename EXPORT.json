@@ -1,0 +1,109 @@
+{
+  "format": "codepress-sites-public-source",
+  "version": "0.2.2",
+  "source_revision": "46edfcbaca1c120c9b5cc9ee45ec0241d3b8adae",
+  "license": "MIT; exported materials only; no trademark rights",
+  "note": "No backend, repository history, private review-state records or reviewer credentials. Initial standalone distribution snapshot.",
+  "files": [
+    {
+      "path": "LICENSE",
+      "bytes": 1460,
+      "sha256": "c08fefe32fe2718592ebb89b401fdfd3fc42fdc52eefad32fd28d78808cda196"
+    },
+    {
+      "path": "README.md",
+      "bytes": 6512,
+      "sha256": "fee6f3cfae5846501a9f83fb449e767427662bd02a988ed979bc6c531dd7e65f"
+    },
+    {
+      "path": "claude/.claude-plugin/plugin.json",
+      "bytes": 469,
+      "sha256": "0c32fc1421849c7d6b263b108c4aca01c0cccdbce0466760415e6edaa0b075c8"
+    },
+    {
+      "path": "claude/.mcp.json",
+      "bytes": 130,
+      "sha256": "e48fd27822abe8c8c0b0f904df9c1a7a9342505bcc44365d0247fdc88097d804"
+    },
+    {
+      "path": "claude/CHANGELOG.md",
+      "bytes": 5796,
+      "sha256": "430a7ea23663a858da282689f217daf5bdb91fbddc0c3f95cab4e31834a8a493"
+    },
+    {
+      "path": "claude/EXPORT.json",
+      "bytes": 1851,
+      "sha256": "99a8a3418f5c407d04f9d0ff40d9fe80dfdb49ddbbdd6bfd40e8261a70487653"
+    },
+    {
+      "path": "claude/LICENSE",
+      "bytes": 1460,
+      "sha256": "c08fefe32fe2718592ebb89b401fdfd3fc42fdc52eefad32fd28d78808cda196"
+    },
+    {
+      "path": "claude/README.md",
+      "bytes": 6527,
+      "sha256": "ed62e30f20dcb605676db071059974af0059a900ab4709125cd9c759f4a858df"
+    },
+    {
+      "path": "claude/assets/logo-mark-square.png",
+      "bytes": 5596,
+      "sha256": "6a028cbd7c3bf29246d6b0813feff9e697ae11d3ff200759066075a28e4bacfe"
+    },
+    {
+      "path": "claude/skills/migrate-site/SKILL.md",
+      "bytes": 14962,
+      "sha256": "65e51e00a938e5a199a44308cb3bccb53c68fd824eb1843445a0263ed0b464b5"
+    },
+    {
+      "path": "claude/skills/publish-site/SKILL.md",
+      "bytes": 13813,
+      "sha256": "f45d99bb0975e387caebefc867a0e3c5434653158bcfefb8afd8f3d87659a463"
+    },
+    {
+      "path": "openai/CHANGELOG.md",
+      "bytes": 5796,
+      "sha256": "430a7ea23663a858da282689f217daf5bdb91fbddc0c3f95cab4e31834a8a493"
+    },
+    {
+      "path": "openai/EXPORT.json",
+      "bytes": 1837,
+      "sha256": "e1979b7873ef50b72fc772066e28e95c298529101a0ccbeb3f35c507a35a0386"
+    },
+    {
+      "path": "openai/LICENSE",
+      "bytes": 1460,
+      "sha256": "c08fefe32fe2718592ebb89b401fdfd3fc42fdc52eefad32fd28d78808cda196"
+    },
+    {
+      "path": "openai/README.md",
+      "bytes": 6527,
+      "sha256": "ed62e30f20dcb605676db071059974af0059a900ab4709125cd9c759f4a858df"
+    },
+    {
+      "path": "openai/assets/logo-mark-square.png",
+      "bytes": 5596,
+      "sha256": "6a028cbd7c3bf29246d6b0813feff9e697ae11d3ff200759066075a28e4bacfe"
+    },
+    {
+      "path": "openai/mcp.json",
+      "bytes": 379,
+      "sha256": "3b99776f4096f3aed01630aee0322d54863add14c4961bca1fff867a228e6b88"
+    },
+    {
+      "path": "openai/plugin.json",
+      "bytes": 10297,
+      "sha256": "cbf0ab0ac45ed00d349f2b20bbf10779741ab693b4c052f97e211ab0c07ef6e5"
+    },
+    {
+      "path": "openai/skills/migrate-site/SKILL.md",
+      "bytes": 14962,
+      "sha256": "65e51e00a938e5a199a44308cb3bccb53c68fd824eb1843445a0263ed0b464b5"
+    },
+    {
+      "path": "openai/skills/publish-site/SKILL.md",
+      "bytes": 13813,
+      "sha256": "f45d99bb0975e387caebefc867a0e3c5434653158bcfefb8afd8f3d87659a463"
+    }
+  ]
+}

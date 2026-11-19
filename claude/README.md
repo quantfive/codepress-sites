@@ -41,7 +41,7 @@ Guest sites are removed at the expiry the service returns unless claimed. A clai
 
 The two skill sources are identical across the platform folders. These runtime files were exported from canonical revision `46edfcbaca1c120c9b5cc9ee45ec0241d3b8adae`; public documentation and subset inventories are adapted for this standalone repository. Release validation and directory acceptance remain separate from source availability.
 
-This Claude source export adds directory-only metadata: its manifest references the existing, unmodified 512×512 CodePress PNG at [.claude-plugin/icon.png](.claude-plugin/icon.png) as `./.claude-plugin/icon.png`, relative to this plugin root, and explicitly sets `privacyPolicyUrl` to `https://codepress.dev/privacy`. Skills, MCP configuration, the OpenAI export and functional version 0.2.2 retain their prior bytes. The canonical revision and input hash remain provenance; this adapted public source is not byte-identical to the already delivered full ZIPs and does not replace or redefine those archives. Directory acceptance must be checked against the exact public commit before the first portal save or submission.
+This Claude source export adds directory-only listing metadata: the manifest sets the CodePress icon and `privacyPolicyUrl` (`https://codepress.dev/privacy`) for the directory listing; Claude Code ignores both at load time. Skills, MCP configuration, the OpenAI export and functional version 0.2.2 retain their prior bytes. The canonical revision and input hash remain provenance; this adapted public source is not byte-identical to the already delivered full ZIPs and does not replace or redefine those archives.
 
 ## Privacy and support
 

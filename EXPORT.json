@@ -38,7 +38,7 @@
     {
       "path": "claude/EXPORT.json",
       "bytes": 2179,
-      "sha256": "6f9be372946684c4ce2530134ad01f868d02b2e674e5db1a538a7a07df8538fb"
+      "sha256": "c3105760fb6acea470abcec3be86f4fce9e83aa8ecde92ba2ab3d36171109693"
     },
     {
       "path": "claude/LICENSE",
@@ -47,8 +47,8 @@
     },
     {
       "path": "claude/README.md",
-      "bytes": 7250,
-      "sha256": "37c4809f3214b830319416b49ab7e002f584760f72903cb04f8dc655279b20df"
+      "bytes": 7042,
+      "sha256": "629944be7ed34b87b61f62c69136ad9a89da80fbac28271987620264ac956879"
     },
     {
       "path": "claude/assets/logo-mark-square.png",
